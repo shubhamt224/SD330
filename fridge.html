@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Fridge Display</title>
+<style>
+    body {
+        background-color: #e0e0e0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+    }
+    #fridgeDisplay {
+        position: relative;
+        width: 592px; /* Width of the fridge image */
+        height: 807px; /* Height of the fridge image */
+        background-image: url('https://dam.thdstatic.com/content/production/PfiKheohdjFVURRmATgegw/qUDW-55FkZo_3SAVswm9fw/Original%20file/f13ae648-df8c-428b-ac97-1568f62af40c_205065350_New.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    #clock {
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 123, 255, 0.8);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-size: 24px;
+        display: block; /* Always visible */
+    }
+    #temperature {
+        position: absolute;
+        top: 20%; /* Positioned above the images */
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 20px;
+        color: #333;
+        display: none; /* Initially hidden */
+    }
+    #webScreen, #tvScreen, #fridgeScreen, #extraTvScreen {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none; /* Initially hidden */
+        top: 25%; /* Starting position, adjusted for temperature display */
+        width: 35%; /* Smaller size to fit */
+    }
+    .displayImage {
+        width: 100%;
+        height: auto;
+        margin-top: 40px; /* Space between images */
+    }
+    .button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 2;
+    }
+</style>
+</head>
+<body>
+
+<div id="fridgeDisplay">
+    <div id="clock">12:00:00 PM</div>
+    <div id="temperature">Temperature: 40°F</div>
+    <img id="webScreen" class="displayImage" src="https://aptokash.github.io/SD330-2/06-web.jpg" alt="Web Screen" style="top: 22%;">
+    <img id="tvScreen" class="displayImage" src="https://aptokash.github.io/SD330-2/06-tv.jpg" alt="TV Screen">
+    <img id="fridgeScreen" class="displayImage" src="https://aptokash.github.io/SD330-2/06-fridge.jpg" alt="Fridge Interior">
+    <img id="extraTvScreen" class="displayImage" src="https://aptokash.github.io/SD330-2/06-tv.jpg" alt="Extra TV Screen">
+    <div class="button">
+        <button onclick="toggleDisplay()">Power</button>
+    </div>
+</div>
+
+<script>
+    let displayOn = false;
+
+    function toggleDisplay() {
+        displayOn = !displayOn;
+        const elementsToShowOrHide = ['temperature', 'webScreen', 'tvScreen', 'fridgeScreen', 'extraTvScreen'];
+        elementsToShowOrHide.forEach(id => {
+            document.getElementById(id).style.display = displayOn ? 'block' : 'none';
+        });
+    }
+
+    function updateClock() {
+        const now = new Date();
+        const clockElement = document.getElementById('clock');
+        clockElement.innerHTML = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+        setTimeout(updateClock, 1000);
+    }
+    updateClock(); // Initialize clock update
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
