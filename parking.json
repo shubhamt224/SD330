@@ -1,0 +1,102 @@
+{
+    "lots": [
+      {
+        "name": "Foy",
+        "imagePath": "mapFoy.jpg",
+        "totalSpaces": "150",
+        "comments": "Primary lot near the administration buildings",
+        "lots": [
+          {
+            "number": "001",
+            "isHandicap": false,
+            "tags": ["Faculty/Staff"],
+            "status": "Reserved",
+            "openSince": "04/28/2024",
+            "endReserveDate": "04/29/2024"
+          }
+        ]
+      },
+      {
+        "name": "McCann",
+        "imagePath": "mapMcCann.jpg",
+        "totalSpaces": "120",
+        "comments": "Adjacent to the sports complex",
+        "lots": [
+          {
+            "number": "001",
+            "isHandicap": false,
+            "tags": ["Student"],
+            "status": "Available",
+            "openSince": "",
+            "endReserveDate": ""
+          }
+        ]
+      },
+      {
+        "name": "Donnelly",
+        "imagePath": "mapDonnelly.jpg",
+        "totalSpaces": "100",
+        "comments": "Lot designated for science building",
+        "lots": [
+          {
+            "number": "001",
+            "isHandicap": false,
+            "tags": ["Visitor"],
+            "status": "Filled",
+            "openSince": "04/22/2024",
+            "endReserveDate": ""
+          }
+        ]
+      },
+      {
+        "name": "Midrise",
+        "imagePath": "mapMidrise.jpg",
+        "totalSpaces": "80",
+        "comments": "Near the dormitories",
+        "lots": [
+          {
+            "number": "001",
+            "isHandicap": true,
+            "tags": ["Resident"],
+            "status": "Reserved",
+            "openSince": "04/30/2024",
+            "endReserveDate": "05/01/2024"
+          }
+        ]
+      },
+      {
+        "name": "Fontaine",
+        "imagePath": "mapFontaine.jpg",
+        "totalSpaces": "70",
+        "comments": "Small lot for faculty",
+        "lots": [
+          {
+            "number": "001",
+            "isHandicap": false,
+            "tags": ["Faculty"],
+            "status": "Available",
+            "openSince": "",
+            "endReserveDate": ""
+          }
+        ]
+      },
+      {
+        "name": "Steel Plant",
+        "imagePath": "mapSteelPlant.jpg",
+        "totalSpaces": "90",
+        "comments": "For the art and design students",
+        "lots": [
+          {
+            "number": "001",
+            "isHandicap": false,
+            "tags": ["Student", "Art"],
+            "status": "Filled",
+            "openSince": "04/20/2024",
+            "endReserveDate": ""
+          }
+        ]
+      }
+    ]
+  }
+  
+  
