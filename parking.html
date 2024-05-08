@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marist Parking App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: black;
+            background-color: #F4EAD5; /* Tan background */
+        }
+        header, footer {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        .content {
+            text-align: center;
+            padding: 20px;
+            display: none; /* Initially hide all content sections */
+        }
+        #home {
+            display: block; /* Show home by default */
+        }
+        img.page-image, img.logo {
+            max-width: 100%; /* Responsive image */
+            height: auto;
+            margin-top: 20px;
+        }
+        .announcement-box, .lot-details {
+            background-color: white;
+            border: 2px solid red;
+            padding: 10px;
+            margin: 20px;
+            width: calc(100% - 40px); /* Adjust width to padding */
+        }
+        ul, .lot-details ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            cursor: pointer;
+            margin: 5px 0;
+            color: blue;
+            text-decoration: underline;
+        }
+        li:hover {
+            color: darkred;
+        }
+        .lot-details {
+            display: none; /* Hide details initially */
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="text"], input[type="password"], input[type="submit"] {
+            padding: 10px;
+            margin: 5px 0;
+            display: block;
+            width: 95%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Marist Parking App</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showContent('home')">Home</a></li>
+                <li><a href="#" onclick="showContent('login')">Login</a></li>
+                <li><a href="#" onclick="showContent('ticket')">Ticket</a></li>
+                <li><a href="#" onclick="showContent('lots')">Marist Lots</a></li>
+                <li><a href="#" onclick="showContent('contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="home" class="content">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/5b/Marist_Red_Foxes_logo.svg/1200px-Marist_Red_Foxes_logo.svg.png" alt="Marist Red Foxes" class="logo">
+            <h2>Welcome to the Marist Parking App</h2>
+            <p>Welcome user! Here's the latest information for you:</p>
+            <div class="announcement-box">
+                <h3>Events:</h3>
+                <p>McCann Parking lot is closed due to men's basketball game at 7pm.</p>
+            </div>
+            <div class="announcement-box">
+                <h3>Messages:</h3>
+                <p>You have one outstanding ticket.</p>
+                <button onclick="showContent('ticket')">View Ticket</button>
+            </div>
+        </div>
+        <div id="login" class="content">
+            <h2>Login</h2>
+            <form action="#" method="post">
+                <input type="text" name="username" placeholder="Enter Username" required>
+                <input type="password" name="password" placeholder="Enter Password" required>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+        <div id="ticket" class="content">
+            <h1>404 - Page Not Found</h1>
+            <p>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+            <img src="https://media.istockphoto.com/id/486249546/photo/massive-parking-lot.jpg" alt="Massive Parking Lot" class="page-image">
+            <p><a href="#" onclick="showContent('home')">Go to Home Page</a></p>
+        </div>
+        <div id="lots" class="content">
+            <img src="https://www.marist.edu/documents/d/guest/marist-campus-thumb-1" alt="Marist Campus" class="page-image">
+            <h2>Marist Lots</h2>
+            <p>Click on a lot name to view the parking spaces.</p>
+            <ul>
+                <!-- Repeating the structure for each lot with 6 parking space examples -->
+                <!-- Foy lot now has 10 spaces as per your request -->
+                <li onclick="toggleSpaces('foy')">Foy</li>
+                <div id="foy" class="lot-details">
+                    <img src="https://www.marist.edu/documents/d/guest/marist-campus-thumb-1" alt="Foy Lot Image">
+                    <ul>
+                        <li>Space 001: Faculty/Staff - Reserved</li>
+                        <li>Space 002: Faculty/Staff - Available</li>
+                        <li>Space 003: Faculty/Staff - Reserved</li>
+                        <li>Space 004: Faculty/Staff - Available</li>
+                        <li>Space 005: Faculty/Staff - Reserved</li>
+                        <li>Space 006: Faculty/Staff - Available</li>
+                        <li>Space 007: Faculty/Staff - Reserved</li>
+                        <li>Space 008: Faculty/Staff - Available</li>
+                        <li>Space 009: Faculty/Staff - Reserved</li>
+                        <li>Space 010: Faculty/Staff - Available</li>
+                    </ul>
+                </div>
+                <li onclick="toggleSpaces('fulton')">Fulton</li>
+                <div id="fulton" class="lot-details">
+                    <img src="https://www.marist.edu/documents/d/guest/marist-campus-thumb-1" alt="Fulton Lot Image">
+                    <ul>
+                        <li>Space 001: Student - Available</li>
+                        <li>Space 002: Student - Reserved</li>
+                        <li>Space 003: Student - Available</li>
+                        <li>Space 004: Student - Reserved</li>
+                        <li>Space 005: Student - Available</li>
+                        <li>Space 006: Student - Reserved</li>
+                    </ul>
+                </div>
+                <li onclick="toggleSpaces('midrise')">Midrise</li>
+                <div id="midrise" class="lot-details">
+                    <img src="https://www.marist.edu/documents/d/guest/marist-campus-thumb-1" alt="Midrise Lot Image">
+                    <ul>
+                        <li>Space 001: Visitor - Available</li>
+                        <li>Space 002: Visitor - Reserved</li>
+                        <li>Space 003: Visitor - Available</li>
+                        <li>Space 004: Visitor - Reserved</li>
+                        <li>Space 005: Visitor - Available</li>
+                        <li>Space 006: Visitor - Reserved</li>
+                    </ul>
+                </div>
+                <li onclick="toggleSpaces('fontaine')">Fontaine</li>
+                <div id="fontaine" class="lot-details">
+                    <img src="https://www.marist.edu/documents/d/guest/marist-campus-thumb-1" alt="Fontaine Lot Image">
+                    <ul>
+                        <li>Space 001: Admin - Available</li>
+                        <li>Space 002: Admin - Reserved</li>
+                        <li>Space 003: Admin - Available</li>
+                        <li>Space 004: Admin - Reserved</li>
+                        <li>Space 005: Admin - Available</li>
+                        <li>Space 006: Admin - Reserved</li>
+                    </ul>
+                </div>
+                <li onclick="toggleSpaces('donnelly')">Donnelly</li>
+                <div id="donnelly" class="lot-details">
+                    <img src="https://www.marist.edu/documents/d/guest/marist-campus-thumb-1" alt="Donnelly Lot Image">
+                    <ul>
+                        <li>Space 001: Faculty - Available</li>
+                        <li>Space 002: Faculty - Reserved</li>
+                        <li>Space 003: Faculty - Available</li>
+                        <li>Space 004: Faculty - Reserved</li>
+                        <li>Space 005: Faculty - Available</li>
+                        <li>Space 006: Faculty - Reserved</li>
+                    </ul>
+                </div>
+                <li onclick="toggleSpaces('northend')">North End</li>
+                <div id="northend" class="lot-details">
+                    <img src="https://www.marist.edu/documents/d/guest/marist-campus-thumb-1" alt="North End Lot Image">
+                    <ul>
+                        <li>Space 001: Reserved - No Parking</li>
+                        <li>Space 002: Reserved - No Parking</li>
+                        <li>Space 003: Reserved - No Parking</li>
+                        <li>Space 004: Reserved - No Parking</li>
+                        <li>Space 005: Reserved - No Parking</li>
+                        <li>Space 006: Reserved - No Parking</li>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+        <div id="contact" class="content">
+            <img src="https://www.marist.edu/documents/d/guest/marist-campus-thumb-1" alt="Marist Campus" class="page-image">
+            <h2>Contact Information</h2>
+            <p>Marist Parking<br>
+            Security service in Dutchess County, New York<br>
+            Located in: Donnelly Hall<br>
+            Address: Donnelly Hall, 201, Poughkeepsie, NY 12601<br>
+            Phone: (845) 575-3000</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Marist Parking. All rights reserved.</p>
+    </footer>
+    <script>
+        function showContent(id) {
+            const sections = document.querySelectorAll('.content');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            const activeSection = document.getElementById(id);
+            activeSection.style.display = 'block';
+        }
+        function toggleSpaces(lotId) {
+            const lot = document.getElementById(lotId);
+            if (lot) {
+                lot.style.display = lot.style.display === 'block' ? 'none' : 'block';
+            }
+        }
+    </script>
+</body>
+</html>
